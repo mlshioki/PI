@@ -1,0 +1,1514 @@
+import java.util.Scanner;
+
+public class GAME {
+    public static void main(String[] args){
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("Serena Williams chegou ao hospital pouco antes das oito da manhã, como sempre fazia, colocou seu uniforme branco e saiu para \ncomeçar seus afazeres do dia. Pegou o elevador e desceu no terceiro andar, dirigindo-se para o quarto 310 e trocando os lençóis \nda cama do paciente, que no momento estava no jardim tomando sol junto com todos os outros, como era de costume toda manhã. \nSeguiu para o 320, depois o 330, e assim por diante.\n"
+                + "Até chegar no 380.\n"
+                + "Assim que se aproximou da porta notou algo estranho, o chão embaixo dela parecia avermelhado, mas sua cor era cinza. Ela \nabriu a porta e a visão que teve a fez ter vontade de vomitar seu café inteiro.\n"
+                + "As paredes estavam cheias de marcas vermelhas de mãos, alguns símbolos estranhos e palavras dispersas. Os móveis do quarto \nnão estavam mais ali, todos haviam desaparecido. Em todo o cômodo era possível encontrar apenas uma única coisa, estirada bem \nao centro do mesmo. O corpo de Anne Charles.");
+        System.out.println("");
+        System.out.println("Aperte enter para continuar.");
+        leitor.nextLine();
+        System.out.println("Olá, usuário, seja bem-vindo ao jogo A Seita! Antes de começar a jogar você precisa decidir com qual das personagens deseja iniciar a \nhistória. A seguir temos o perfil de cada uma para te ajudar na escolha. Lembrando que, independente de qual escolher, você \nirá jogar com ambas, cada uma em momentos diferentes.\n");
+        System.out.println("A.Ava Fleury: \n" +
+                           "- Detetive;\n" +
+                           "- 30 anos;\n" +
+                           "- Solteira;\n" +
+                
+                           "- Possui uma filha;\n" +
+                           "- Reside em Paris;\n");
+        System.out.println("B.Florence Gauthier:\n" +
+                           "- Enfermeira;\n" +
+                           "- 28 anos;\n" +
+                           "- Casada;\n" +
+                           "- Sem filhos;\n" +
+                           "- Reside em Marselha; ");
+        System.out.println("");
+        
+        String personagem;
+        String resposta = "N";
+        do{
+            System.out.println("Insira a letra da personagem escolhida:");
+            personagem = leitor.nextLine().toUpperCase();
+            
+            if(personagem.equals("A")|| personagem.equals("B")){
+                if(personagem.equals("A")){
+                    System.out.println("Você escolheu iniciar o jogo com Ava Fleury. Deseja continuar com essa personagem?(S/N)");
+                    resposta = leitor.nextLine().toUpperCase();
+                }
+                else{
+                    System.out.println("Você escolheu iniciar o jogo com Florence Gauthier. Deseja continuar com essa personagem?(S/N)");
+                    resposta = leitor.nextLine().toUpperCase();
+                }
+            }
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+                
+            }
+        }while(resposta.equals("N"));
+        int[]fragmentos;
+        fragmentos = new int [3];
+        
+        if(personagem.equals("A")){
+            AvaParte1();
+            fragmentos[0] = AvaParte2();
+            FlorenceParte1();
+            FlorenceParte2();
+            fragmentos[1] = FlorenceParte3();
+            fragmentos[2] = FlorenceParte4();
+            
+            
+        }
+        else{
+            FlorenceParte1();
+            FlorenceParte2();
+            fragmentos[1] = FlorenceParte3();
+            fragmentos[2] = FlorenceParte4();
+            AvaParte1();
+            fragmentos[0] = AvaParte2();
+        }
+        Final(fragmentos[0],fragmentos[1],fragmentos[2]);
+        
+    }
+    
+   
+    
+    public static void AvaParte1 (){
+        Scanner leitor = new Scanner(System.in);
+        String escolha1;
+        System.out.println( "Ava Fleury. \n\n" +
+                            "21 de outubro, 16:32.\n\n" +
+                            "Cheguei na vila há pouco mais de duas horas. Depois de deixar minhas malas no quarto da pensão e tomar um café forte, saí \n"+
+                            "para me familiarizar com o local. As pessoas daqui não são muito simpáticas, mas não devem estar acostumados a receber \n"+
+                            "visitantes, então eu entendo o lado delas. O clima aqui é nublado quase sempre pelo que me disseram, e a arquitetura parece \n"+   
+                            "muito com um daqueles filmes que retratam a época da caça às bruxas. \n" +
+                            "Andei por várias ruas, observando as lojas e as casas, até chegar a praça central, onde algumas crianças brincavam \n"+
+                            "estranhamente de forma muito silenciosa. Elas não corriam, não riam, não gritavam, apenas ficavam sentadas ao lado da fonte \n"+
+                            "e mexiam em seus brinquedos. Definitivamente o lugar mais esquisito em que já estive.\n" +
+                            "Percebi uma coisa bem peculiar dentre os cidadãos da vila também sempre que pedia informações sobre para que lado ficava \n"+
+                            "determinado estabelecimento. Quando eu tocava na dúvida sobre a localização do hospital, todos pareciam não entender do que \n"+
+                            "se tratava, ficavam confusos e diziam não saber nada sobre um hospital, pois, segundo eles, existia apenas um médico no \n"+
+                            "vilarejo e ele atendia em domicílio. Muito estranho.\n");
+            
+                do{
+                    System.out.println("Escolha entre:\n"+
+                                "1.Continuar andando pela cidade em busca de informações.\n" +
+                                "2.Voltar para a pensão e organizar suas coisas para o dia posterior.");
+            
+                escolha1 = leitor.nextLine();
+            
+                if(escolha1.equals("1") || escolha1.equals("2")){
+                if(escolha1.equals("1")){
+                    String escolha2;
+                    System.out.println("\n1. Continuar andando pela cidade em busca de informações.\n\n" +
+                                        "Após caminhar por mais alguns minutos, acabei encontrando uma capela, aparentemente muito pouco frequentada. Entrei e sentei \n"+
+                                        "no último banco, observando em volta. De fato não era um lugar muito bem cuidado, haviam teias de aranha para todos os lados \n"+
+                                        "e poeira em todos os encostos dos bancos. As janelas eram compostas por mosaicos de acontecimentos bíblicos, a luz não \n"+
+                                        "passava fácil por entre elas, mas o local continha algumas velas acesas perto do altar que clareavam o ambiente. \n" +
+                                        "Então eu ouvi um barulho vindo da parte traseira do palco, revelando pouco depois um homem com vestes escuras e colarinho \n"+
+                                        "branco. O padre. Cumprimentei-o e perguntei sobre a vila, assim como fiz com todos os outros. Mais uma vez cheguei ao \n"+
+                                        "assunto do hospital, mas diferente das demais pessoas ele parecia saber de algo.\n" +
+                                        "“É um lugar que já foi a morada de Deus, mas agora o Senhor nem mesmo olha para lá. Não é um bom local para se estar por \n"+
+                                        "conta própria, pois quando menos perceber ele já terá te consumido.” – foi o que ele disse.\n" +
+                                        "Saí da capela mais confusa do que entrei, mas não iria conseguir processar tudo naquele momento, então voltei para a pensão \n"+
+                                        "e passei a arrumar tudo para o dia seguinte. Chegando lá fui recepcionada pela dona, a senhora Charlotte.\n" +
+                                        "“Olá, querida, como foi o passeio?” -ela era a pessoa mais simpática que havia naquela cidade, de fato.");
+                    do{
+                    System.out.println("Escolha uma resposta:\n" +
+                                        "1.“Foi legal, senhora Charlotte, pude ver muitos lugares e me familiarizar melhor com a vila.”\n" +
+                                        "2.“Foi um tanto estranho, o pessoal daqui não é exatamente o que podemos chamar de gente carismática.”");
+                    escolha2 = leitor.nextLine();
+                    
+                    if(escolha2.equals("1") || escolha2.equals("2")){
+                        if(escolha2.equals("1")){
+                            System.out.println("\n1. “Foi legal, senhora Charlotte, pude ver muitos lugares e me familiarizar melhor com a vila.”\n\n" +
+                                                "“Oh que bom! E pode me chamar só de Lotte, meu bem. Ah sim, quase me esqueço, alguém deixou uma carta para você há poucos \n"+
+                                                "minutos, eu coloquei no seu quarto.” -ela sorriu e saiu em direção a cozinha.\n" +
+                                                "Uma carta? Que estranho, não conheço ninguém aqui. Como essa pessoa sabia onde eu estava? \n" +
+                                                "Subi as escadas até o quarto e encontrei a carta na escrivaninha ao lado da cama. Ela estava selada com cera e havia uma \n"+
+                                                "letra gravada nela apenas. S. \n\n" +
+                                                "                      “Você não achará nada procurando no escuro.\n" +
+                                                "                  É preciso uma luz para guiar-te pelo caminho obscuro.\n" +
+                                                "                          Nada nunca vem de graça, pode apostar.\n" +
+                                                "                       Guarde o segredo superior até ele te sufocar.”\n\n" +
+                                                "Tudo estava escrito numa letra muito detalhada, quase medieval. Não entendi o que significava o texto, seria algum tipo de brincadeira?\n");
+                        }
+                        else{
+                            System.out.println("\n2. “Foi um tanto estranho, o pessoal daqui não é exatamente o que podemos chamar de gente carismática.”\n\n" +
+                                                "“A vila não é conhecida por recepcionar bem os visitantes, todos sempre acham que novidade é sinônimo de problema.” -disse, \n"+
+                                                "rindo. - “Ah sim, quase me esqueço, alguém deixou uma carta para você há poucos minutos, eu coloquei no seu \n"+
+                                                "quarto.” -ela sorriu e saiu em direção a cozinha.\n" +
+                                                "Uma carta? Que estranho, não conheço ninguém aqui. Como essa pessoa sabia onde eu estava? \n" +
+                                                "Subi as escadas até o quarto e encontrei a carta na escrivaninha ao lado da cama. Ela estava selada com cera e havia uma \n"+
+                                                ""
+                                    + "letra gravada nela apenas. S. \n\n" +
+                                                "                      “Você não achará nada procurando no escuro.\n" +
+                                                "                  É preciso uma luz para guiar-te pelo caminho obscuro.\n" +
+                                                "                          Nada nunca vem de graça, pode apostar.\n" +
+                                                "                       Guarde o segredo superior até ele te sufocar.”\n\n" +
+                                                "Tudo estava escrito numa letra muito detalhada, quase medieval. Não entendi o que significava o texto, seria algum tipo de brincadeira?\n");
+                        }
+                    }
+                    else{
+                        System.out.println("Comando inválido, tente novamente.");
+                    }
+                    }while(!escolha2.equals("1") && !escolha2.equals("2"));
+                
+                }
+                else{
+                    String escolha2;
+                    System.out.println("\n2. Voltar para a pensão e organizar suas coisas para o dia posterior.\n" +
+                                        "Depois de alguns minutos olhando as crianças, resolvi retornar para a hospedaria, precisava antes de tudo manter minhas \ncoisas organizadas, poderia conhecer mais sobre a vila em outro momento. Cheguei na pensão e fui recepcionada pela \ndona, a senhora Charlotte.\n" +
+                                        "“Olá, querida, como foi o passeio?” -ela era a pessoa mais simpática que havia naquela cidade, de fato.");
+                    do{
+                    System.out.println("Escolha uma resposta:\n" +
+                                        "1.“Foi legal, senhora Charlotte, pude ver muitos lugares e me familiarizar melhor com a vila.”\n" +
+                                        "2.“Foi um tanto estranho, o pessoal daqui não é exatamente o que podemos chamar de gente carismática.”");
+                    escolha2 = leitor.nextLine();
+                    
+                    if(escolha2.equals("1") || escolha2.equals("2")){
+                        if(escolha2.equals("1")){
+                            System.out.println("\n1. “Foi legal, senhora Charlotte, pude ver muitos lugares e me familiarizar melhor com a vila.”\n\n" +
+                                                "“Oh que bom! E pode me chamar só de Lotte, meu bem. Ah sim, quase me esqueço, alguém deixou uma carta para você há poucos \nminutos, eu coloquei no seu quarto.” -ela sorriu e saiu em direção a cozinha.\n" +
+                                                "Uma carta? Que estranho, não conheço ninguém aqui. Como essa pessoa sabia onde eu estava? \n\n" +
+                                                "Subi as escadas até o quarto e encontrei a carta na escrivaninha ao lado da cama. Ela estava selada com cera e havia uma \nletra gravada nela apenas. S. \n\n" +
+                                                "                      “Você não achará nada procurando no escuro.\n" +
+                                                "                  É preciso uma luz para guiar-te pelo caminho obscuro.\n" +
+                                                "                          Nada nunca vem de graça, pode apostar.\n" +
+                                                "                       Guarde o segredo superior até ele te sufocar.”\n\n" +
+                                                "Tudo estava escrito numa letra muito detalhada, quase medieval. Não entendi o que significava o texto, seria algum tipo de brincadeira?");
+                        }
+                        else{
+                            System.out.println("\n2. “Foi um tanto estranho, o pessoal daqui não é exatamente o que podemos chamar de gente carismática.”\n\n" +
+                                                "“A vila não é conhecida por recepcionar bem os visitantes, todos sempre acham que novidade é sinônimo de problema.” -disse, \nrindo. - “Ah sim, quase me esqueço, alguém deixou uma carta para você há poucos minutos, eu coloquei no seu \nquarto.” -ela sorriu e saiu em direção a cozinha.\n" +
+                                                "Uma carta? Que estranho, não conheço ninguém aqui. Como essa pessoa sabia onde eu estava? \n" +
+                                                "Subi as escadas até o quarto e encontrei a carta na escrivaninha ao lado da cama. Ela estava selada com cera e havia uma \nletra gravada nela apenas. S. \n\n" +
+                                                "                      “Você não achará nada procurando no escuro.\n" +
+                                                "                  É preciso uma luz para guiar-te pelo caminho obscuro.\n" +
+                                                "                          Nada nunca vem de graça, pode apostar.\n" +
+                                                "                       Guarde o segredo superior até ele te sufocar.”\n\n" +
+                                                "Tudo estava escrito numa letra muito detalhada, quase medieval. Não entendi o que significava o texto, seria algum tipo de brincadeira?");
+                        }
+                    }
+                    else{
+                        System.out.println("Comando inválido, tente novamente.");
+                    }
+                    }while(!escolha2.equals("1") && !escolha2.equals("2"));
+                }
+            }
+            
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+                }
+                }while(!escolha1.equals("1") && !escolha1.equals("2")); 
+    }
+    
+    public static int AvaParte2(){
+        Scanner leitor = new Scanner(System.in);
+        String escolha3;        
+        int fragmento1 = 0;
+        System.out.println("\n22 de outubro, 14:21.\n" +
+                            "Hoje é dia de conhecer a cena do suposto crime. Chegando no hospital, logo fui recepcionada pelo delegado da cidade.\n" +
+                            "O quarto realmente está assustador. O reporte da morte me foi entregue e realmente o sangue era fresco, a vítima possuía \n" +
+                            "cortes nos braços e em alguns dias receberíamos o resultado da análise daquele sangue que definiria se de fato era da vítima\n" +
+                            "ou não. Pedi ao legista que me desse também as fotos dos símbolos nas paredes, precisava estudar sobre aquilo o mais rápido\n" +
+                            "possível. Ele me entregou todo o seu material e depois de realizar toda a análise da área já não havia muito mais o que ser\n" +
+                            "feito por aqui.");
+        do{
+            System.out.println("Escolha entre:\n" +
+                                "1.Ir a biblioteca da cidade e procurar livros ou registro de tais símbolos.\n" +
+                                "2.Voltar para casa e buscar registros na internet de tais símbolos.");
+            escolha3 = leitor.nextLine();
+            
+            if(escolha3.equals("1") || escolha3.equals("2")){
+                if(escolha3.equals("1")){
+                    System.out.println("\n1.Ir à biblioteca da cidade e procurar livros ou registros de tais símbolos.\n\n" +
+                                        "Chegando na biblioteca para poupar tempo decido pedir ajuda a bibliotecária que logo se apresentou como Francis.\n\n"+ 
+                                        "“Boa noite,Francis, sou nova na cidade e estou estudando alguns símbolos. Você conhece algum livro ou artigo que possa me ajudar?”.\n\n" +
+                                        "Responde Francis: “Sra. Fleury, temos alguns livros na sessão G e uns artigos e matérias que você pode encontrar no arquivo J\n" +
+                                        "que se encontra no final do corredor”. \n" +
+                                        "A resposta da Francis foi rápida, parecia que já sabia que essa seria a minha pergunta e parecia que ela tinha algo mais para me \n" +
+                                        "falar, mas por algum motivo não o fez. Abri os livros da sessão que ela havia me indicado muito interessante sobre seitas e seus códigos.\n" +
+                                        "Folheando as páginas, me deparei com um papel dobrado, como se fosse um envelope porem de um papel que se assemelhava a um guardanapo.\n" +
+                                        "Dentro havia um texto rodeado dos mesmos símbolos:\n\n" +
+                                        "                             “A vida sempre foi e sempre será um espelho.\n" +
+                                        "                  Um espelho do nosso passado que devemos nos recordar constantemente”\n\n" +
+                                        "Já estava tarde, decidi voltar para casa, tomar um chá e dormir. Assim que terminei de tomá-lo, notei que já havia começado \n" + 
+                                        "a fazer efeito. Me aproximando do banheiro, minha visão começou a ficar turva. Abri a porta do banheiro e me deparei com\n" +  
+                                        "April, minha filha sentada ao lado da pia. Como ela poderia estar lá? A deixei a mais de 700km de distância! Minha primeira\n" + 
+                                        "reação foi por impulso chegar perto para abraçá-la, mas antes notei em seu semblante que algo estava errado.\n" + 
+                                        "“Como? O que você está fazendo aqui? ”, falei. “Eu preciso que você me responda algo para eu saber que ficarei bem”\n" + 
+                                        "– Responde April. Fiquei sem reação. Quando ia começar a falar ela me interrompeu: “Quando eu tinha 10 anos, você me deu uma\n" + 
+                                        "coisa muito especial de presente, eu preciso que você me diga o que é. Eu preciso para ter certeza que por mais que você\n" + 
+                                        "seja uma pessoa ausente na minha vida, você se importa.”. Eu não tinha palavras, no meu rosto escorriam lagrimas. ");
+                    String escolha4;
+                    do{
+                    System.out.println("Escolha a sua resposta:\n" +
+                                        "1.“Eu te dei um colar, nele tem uma foto nossa do seu primeiro dia de aula que de acordo com você foi o dia mais feliz da sua vida”.\n" +
+                                        "2.“Eu te dei um livro cheio de fotos nossas e histórias escritas por mim para que pudesse ler antes de dormir”.");
+                    escolha4 = leitor.nextLine();
+                    
+                    if(escolha4.equals("1") || escolha4.equals("2")){
+                        if(escolha4.equals("1")){
+                            System.out.println("\n1.“Eu te dei um colar, nele tem uma foto nossa do seu primeiro dia de aula que de acordo com você foi o dia mais feliz da sua vida”.\n" +
+                                                "Ela fica imóvel por um tempo e começa a chorar incessantemente. Seu corpo começa a sumir rapidamente da minha frente quando\n" +  
+                                                "corro para tentar abraça-la.\n");
+                            fragmento1 = 0;
+                        }
+                        else{//FRAGMENTO 1
+                            System.out.println("\n2.“Eu te dei um livro cheio de fotos nossas e historias escritas por mim para que pudesse ler antes de dormir”.\n\n" +
+                                                "“Parabéns mamãe, guarde essa memória para sempre, ela é a prova de que estamos conectadas.\n\n" +
+                                                "                                       Joia do amor coletada.\n\n");
+                            fragmento1 = 1;
+                        }
+                    }
+                    else{
+                        System.out.println("Comando inválido, tente novamente.");
+                    }
+                    
+                    }while(!escolha4.equals("1") && !escolha4.equals("2"));
+                    
+                }
+                else{
+                    System.out.println("\n2.Voltar para casa e buscar registros na internet de tais símbolos.\n\n" +
+                                        "Cheguei em casa, preparei um chá de camomila e abri meu computador para buscar informações. Depois de quase uma hora buscando\n" + 
+                                        "sobre códigos e símbolos me deparei com uma página estranha, de cor preta com a seguinte frase escrita:\n\n" +
+                                        "                             “A vida sempre foi e sempre será um espelho.\n" +
+                                        "                  Um espelho do nosso passado que devemos nos recordar constantemente”\n\n" +
+                                        "Já estava tarde, decidi voltar para casa, tomar um chá e dormir. Assim que terminei de tomá-lo, notei que já havia começado \n" + 
+                                        "a fazer efeito. Me aproximando do banheiro, minha visão começou a ficar turva. Abri a porta do banheiro e me deparei com\n" +  
+                                        "April, minha filha sentada ao lado da pia. Como ela poderia estar lá? A deixei a mais de 700km de distância! Minha primeira\n" + 
+                                        "reação foi por impulso chegar perto para abraçá-la, mas antes notei em seu semblante que algo estava errado.\n" + 
+                                        "“Como? O que você está fazendo aqui? ”, falei. “Eu preciso que você me responda algo para eu saber que ficarei bem”\n" + 
+                                        "– Responde April. Fiquei sem reação. Quando ia começar a falar ela me interrompeu: “Quando eu tinha 10 anos, você me deu uma\n" + 
+                                        "coisa muito especial de presente, eu preciso que você me diga o que é. Eu preciso para ter certeza que por mais que você\n" + 
+                                        "seja uma pessoa ausente na minha vida, você se importa.”. Eu não tinha palavras, no meu rosto escorriam lagrimas. ");
+                    String escolha4;
+                    do{
+                    System.out.println("Escolha a sua resposta:\n" +
+                                        "1.“Eu te dei um colar, nele tem uma foto nossa do seu primeiro dia de aula que de acordo com você foi o dia mais feliz da sua vida”.\n" +
+                                        "2.“Eu te dei um livro cheio de fotos nossas e histórias escritas por mim para que pudesse ler antes de dormir”.");
+                    escolha4 = leitor.nextLine();
+                    
+                    if(escolha4.equals("1") || escolha4.equals("2")){
+                        if(escolha4.equals("1")){
+                            System.out.println("\n1.“Eu te dei um colar, nele tem uma foto nossa do seu primeiro dia de aula que de acordo com você foi o dia mais feliz da sua vida”.\n" +
+                                                "Ela fica imóvel por um tempo e começa a chorar incessantemente. Seu corpo começa a sumir rapidamente da minha frente quando\n" +  
+                                                "corro para tentar abraça-la.\n"); 
+                            fragmento1 = 0;
+                        }
+                        else{//FRAGMENTO 1
+                            System.out.println("\n2.“Eu te dei um livro cheio de fotos nossas e historias escritas por mim para que pudesse ler antes de dormir”.\n" +
+                                                "“Parabéns mamãe, guarde essa memória para sempre, ela é a prova de que estamos conectadas.”\n\n" +
+                                                "                                       Joia do amor coletada.\n\n");
+                            fragmento1 = 1;
+                        }
+                    }
+                    else{
+                        System.out.println("Comando inválido, tente novamente.");
+                    }
+                    
+                    }while(!escolha4.equals("1") && !escolha4.equals("2"));
+                }
+                
+            }
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+            }
+        }   while(!escolha3.equals("1") && !escolha3.equals("2")); 
+        return fragmento1;
+    }
+    
+    
+    public static void FlorenceParte1(){
+        Scanner leitor = new Scanner(System.in);
+        
+        System.out.println("Florence Gauthier.\n\n" +
+                            "20 de outubro, 9:46.\n" +
+                            "Cheguei no vilarejo com meu velho carro, recebi uma boa proposta para morar aqui, serei a nova enfermeira do hospital.\n" +
+                            "Estava procurando minha nova casa de número 33, entre as localidades, o lugar tinha uma bela arquitetura, me remetia algo \n" +
+                            "da idade média, quando encontrei minha nova moradia, avistei uma senhora me esperando na calçada que logo me recebeu.  \n" +
+                            "“Bom dia, sou Agnes, vim te recepcionar no vilarejo, espero que tenha feito uma boa viagem,deseja conhecer sua casa ou o \n" +
+                            "vilarejo?” – disse a estranha senhora me recepcionando.\n\n");
+        String escolha1;
+        do{
+        System.out.println("Escolha entre:\n"+
+                            "1.Conhecer a casa. \n" +
+                            "2.Conhecer o vilarejo.");
+        escolha1 = leitor.nextLine();
+        
+        if(escolha1.equals("1") || escolha1.equals("2")){
+            if(escolha1.equals("1")){
+                String escolha2;
+                System.out.println("\n1.Conhecer a casa.\n\n" +
+                                    "Eu disse a Agnes que gostaria de conhecer a casa, então entramos na construção e ela me apresentou brevemente os cômodos. \n" +
+                                    "A casa tinha uma sala de estar, uma cozinha, um velho armário embaixo de uma escada, e no segundo andar dois quartos e um banheiro. \n" +
+                                    "Um dos quartos não estava utilizável, parecia abandonado, com muito pó e móveis caindo aos pedaços. \n" +
+                                    "Quando descemos as escadas, notei que no andar debaixo havia um cômodo a mais.\n ");
+                do{
+                System.out.println("Escolha entre:\n"+
+                                    "1.Tentar abrir a porta do cômodo.\n"+
+                                    "2.Perguntar a Agnes sobre o cômodo.");
+                escolha2 = leitor.nextLine();
+                
+                if(escolha2.equals("1") || escolha2.equals("2")){
+                    if(escolha2.equals("1")){
+                        System.out.println("\n1.Tentar abri a porta do cômodo.\n\n"+
+                                            "Ao tentar abrir a porta, notei que a porta estava trancada e minha tentativa foi em vão. Agnes viu aquilo tudo e veio correndo até mim. \n" +
+                                            "“Querida não se importe com esse cômodo, aí só tem alguns móveis velhos que alguém virá para buscá-los.” – Disse ela.\n" +
+                                            "Achei muito suspeito a reação dela, mas não questionei.\n" +
+                                            "Depois disso Agnes saiu pela porta da frente se despendindo e me desejando uma boa estadia.");
+                    }
+                    else{
+                        System.out.println("\n2.Perguntar a Agnes sobre o cômodo.\n\n"+
+                                            "“O que tem atrás daquela porta?” – Perguntei apontando para a porta.\n" +
+                                            "“Não se importe com aquela porta querida, está trancada, no quarto só contem alguns moveis velhos, alguém virá para buscá-los.”\n" +
+                                            "Não perguntei mais, mas a curiosidade me atiçava para abrir aquele cômodo. Depois disso Agnes saiu pela porta da frente se \n" +
+                                            "despendindo e me desejando uma boa estadia.");
+                    }
+                }
+                else{
+                    System.out.println("Comando inválido, tente novamente.");
+                }
+                }while(!escolha2.equals("1") && ! escolha2.equals("2"));
+                
+            }
+            else{
+                System.out.println("\n2.Conhecer o vilarejo.\n\n" +
+                                    "Eu disse a Agnes que gostaria de conhecer o vilarejo. Agnes me dirigiu até a uma velha capela, \n"+
+                                    "que parecia mal cuidado, cheio de pó e teias de aranha. O padre que nos recebeu tinha um semblante\n"+
+                                    "muito melancólico. \n"+
+                                    "“Pode vir aqui quando precisar fazer suas orações.” – disse o Padre.\n"+ 
+                                    "Eu somente agradeci, não queria ficar muito tempo ali. Por fim fomos a pensão, onde conheci uma senhora \n"+
+                                    "distinta,se chamava Charlotte, ela não parecia gostar muito de Agnes, foi o que percebi.\n"+
+                                    "“Pode vir aqui quando quiser minha querida, temos um pequeno restaurante. Se não for muito incomodo essa \n"+
+                                    "pergunta, qual o motivo de sua estadia no vilarejo?” – indagou Charlotte.\n");
+                String escolha3;
+                do{
+                    System.out.println("Escolha sua resposta:\n"+
+                                        "1.“Venho para trabalhar no hospital, sou a nova enfermeira.”\n"+
+                                        "2.“Só vim para descansar, preciso de uns dias.”");
+                    escolha3 = leitor.nextLine();
+                    
+                    if(escolha3.equals("1") || escolha3.equals("2")){
+                        if(escolha3.equals("1")){
+                            System.out.println("Depois que eu a respondi, Charlotte estranhou, e disse - “Mas que hospital?”.\n" +
+                                                "“Ora não seja boba Charlotte, deixe a menina em paz. Vamos embora Florence!” – Interviu a Senhora Agnes. \n" +
+                                                "Agnes me puxou para a rua, resolvi não questionar, mas aquela conversa foi algo muito estranho.");
+                        }
+                        else{
+                            System.out.println("Charlotte sorriu e disse – “Pois bem, vou garantir que passe uns ótimos dias nesse lugar, afinal aqui é uma\n" +
+                                                "das poucas ótimas localidades onde a senhorita pode passar um tempo.”\n" +
+                                                "Nos despedimos de Charlotte e fomos embora.");
+                        }
+                    }
+                    else{
+                        System.out.println("Comando inválido, tente novamente.");
+                    }
+                }while(!escolha3.equals("1") && !escolha3.equals("2"));
+            }
+        }
+        else{
+            System.out.println("Comando inválido, tente novamente.");
+        }
+        
+        }while(!escolha1.equals("1") && !escolha1.equals("2"));
+    }
+    
+    public static void FlorenceParte2(){
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("22 de outubro, 07:31\n" +
+                            "Acordei cedo e já estava pronta para o meu primeiro dia no hospital, entrei no meu velho carro e fui \n"+
+                            "direto para o local, sendo recebida pela enfermeira chefe logo na entrada.\n" +
+                            "“Bem-Vinda, me chamo Vonda, então você é a nova enfermeira, sou responsável pelo seu treinamento. Basicamente \n"+
+                            "esse lugar não tem muito segredo, as funções são muito simples e raramente temos emergências, os pacientes são \n"+
+                            "constantemente sedados.” – Disse ela.");
+        String escolha4;
+        do{
+            System.out.println("Escolha sua resposta:\n"+
+                                "1.“Qual o motivo da sedação constante dos pacientes?”\n"+
+                                "2.“Quais são minhas funções?”\n");
+            escolha4 = leitor.nextLine();
+            
+            if(escolha4.equals("1") || escolha4.equals("2")){
+                    if(escolha4.equals("1")){
+                        System.out.println("\n1.“Qual o motivo da sedação constante dos pacientes?”\n\n"+
+                                            "“Sinceramente não sabemos, só recebemos ordens dos médicos e de como devemos tratar os pacientes, segundo \n"+
+                                            "eles os laudos médicos são sigilosos.” – respondeu Vonda.\n" +
+                                            "Achei aquilo estranho, como uma enfermeira chefe não saberia o estado dos pacientes, resolvi não perguntar \n"+
+                                            "mais sobre.\n"+
+                                            "Depois do breve treinamento na parte da manhã, fui almoçar no refeitório. Quando cheguei lá, vi que algumas \n"+
+                                            "enfermeiras olhavam pra mim e cochichavam.");
+                        String escolha5;
+                        do{
+                            System.out.println("Escolha entre:\n"+
+                                                "1.Ir até as enfermeiras.\n"+
+                                                "2.Sentar sozinha.");
+                            escolha5 = leitor.nextLine();
+
+                            if(escolha5.equals("1") || escolha5.equals("2")){
+                                if(escolha5.equals("1")){
+                                    System.out.println("\n1.Ir até as enfermeiras.\n\n"+
+                                                        "Caminhei em direção as enfermeiras, precisava me enturmar com elas. Uma delas comentou:\n" +
+                                                        " “Você sabia que só está aqui para substituir uma enfermeira que morreu dentro desse hospital?”\n" +
+                                                        "Respondi – “Eu não sabia disso.” \n" +
+                                                        "Fiquei espantada e não disse mais nada, eu não sabia dessa informação, a comida mal me desceu e o resto \n"+
+                                                        "do dia foi péssimo.");
+                                }
+                                else{
+                                    System.out.println("\n2.Sentar sozinha.\n\n"+
+                                                        "Sentei sozinha em uma mesa, eu estava intimidada com aqueles olhares. Uma das enfermeiras sentou ao meu lado e disse\n" +
+                                                        "- “Bem-vinda, me chamo Sarah, o que te trouxe a esse hospital?” \n" +
+                                                        "“Obrigada, o que me trouxe aqui foi uma ótima proposta salarial.” – Respondi sorrindo.\n" +
+                                                        "Percebi que Sarah ficou surpresa, “Desculpe, mas soube que você veio para substituir uma enfermeira chamada Serena, \n"+
+                                                        "que morreu dentro desse hospital.” – disse ela.\n" +
+                                                        "Fiquei espantada e não disse mais nada, eu não sabia dessa informação, a comida mal me desceu e o resto do dia foi \n"+
+                                                        "péssimo.");
+                                }
+                            }
+                            else{
+                                System.out.println("Comando inválido, tente novamente.");
+                            }
+                            }while(!escolha5.equals("1") && ! escolha5.equals("2"));
+                    }
+                    else{
+                        System.out.println("\n2.“Quais são minhas funções?”\n\n"+
+                                            "“Recebemos pacientes de outros lugares, só temos às instruções do que fazer com cada paciente, geralmente sedação\n"+
+                                            "na maior parte do dia, alimentar e limpar os pacientes também está nas funções mais básicas, apesar de a maioria \n"+
+                                            "estar em um estado vegetativo ou reagir pouco a nós.” – disse Vonda.\n" +
+                                            "Fiquei amedrontada com o que ela disse, como poderia um hospital operar daquela forma. \n" +
+                                            "Depois do breve treinamento na parte da manhã, fui almoçar no refeitório. Quando cheguei lá, vi que algumas \n"+
+                                            "enfermeiras olhavam pra mim e cochichavam.");
+                        String escolha5;
+                        do{
+                            System.out.println("Escolha entre:\n"+
+                                                "1.Ir até as enfermeiras.\n"+
+                                                "2.Sentar sozinha.");
+                            escolha5 = leitor.nextLine();
+
+                            if(escolha5.equals("1") || escolha5.equals("2")){
+                                if(escolha5.equals("1")){
+                                    System.out.println("\n1.Ir até as enfermeiras.\n\n"+
+                                                        "Caminhei em direção as enfermeiras, precisava me enturmar com elas. Uma delas comentou:\n" +
+                                                        " “Você sabia que só está aqui para substituir uma enfermeira que morreu dentro desse hospital?”\n" +
+                                                        "Respondi – “Eu não sabia disso.” \n" +
+                                                        "Fiquei espantada e não disse mais nada, eu não sabia dessa informação, a comida mal me desceu e o resto \n"+
+                                                        "do dia foi péssimo.");
+                                }
+                                else{
+                                    System.out.println("\n2.Sentar sozinha.\n\n"+
+                                                        "Sentei sozinha em uma mesa, eu estava intimidada com aqueles olhares. Uma das enfermeiras sentou ao meu lado e disse\n" +
+                                                        "- “Bem-vinda, me chamo Sarah, o que te trouxe a esse hospital?” \n" +
+                                                        "“Obrigada, o que me trouxe aqui foi uma ótima proposta salarial.” – Respondi sorrindo.\n" +
+                                                        "Percebi que Sarah ficou surpresa, “Desculpe, mas soube que você veio para substituir uma enfermeira chamada Serena, \n"+
+                                                        "que morreu dentro desse hospital.” – disse ela.\n" +
+                                                        "Fiquei espantada e não disse mais nada, eu não sabia dessa informação, a comida mal me desceu e o resto do dia foi \n"+
+                                                        "péssimo.");
+                                }
+                            }
+                            else{
+                                System.out.println("Comando inválido, tente novamente.");
+                            }
+                            }while(!escolha5.equals("1") && ! escolha5.equals("2"));
+                    }
+            }
+            else{
+                    System.out.println("Comando inválido, tente novamente.");
+            }
+        }while(!escolha4.equals("1") && ! escolha4.equals("2"));
+    }
+    
+    public static int FlorenceParte3(){
+        Scanner leitor = new Scanner(System.in);
+        int fragmento2 = 0;
+        System.out.println("Ao anoitecer cheguei em casa já que estava responsável somente pelos turnos da manhã e tarde. Eu estava com muito\n"+
+                            "medo, aquele lugar era totalmente desumano, os pacientes eram tratados de forma negligente, parecia que todos estavam\n"+
+                            "esperando a morte chegar. \n" +
+                            "A informação da enfermeira morta foi o que me deixou mais assustada, eu não sabia de nada disso. Após o meu dia cheio\n"+
+                            "eu estava muito cansada, então resolvi deitar no meu quarto para tirar um cochilo.\n\n"+
+                            "Acordei de súbito com um barulho alto e ressoante, levantei da cama e fui verificar o que era.");
+        String escolha6;
+        do{
+            System.out.println("Escolha o que fazer:\n"+
+                                "1.Verificar o andar de cima.\n"+
+                                "2.Verificar o andar de baixo.");
+            escolha6 = leitor.nextLine();
+            
+            if(escolha6.equals("1") || escolha6.equals("2")){
+            if(escolha6.equals("1")){
+                String escolha7;
+                System.out.println("\n1.Verificar o andar de cima.\n\n" +
+                                    "Andei pelo quarto e fui em direção ao banheiro, não havia nada de anormal lá,e nem no quarto com os móveis \n"+
+                                    "antigos e abandonados.\n "+
+                                    "Aperte qualquer tecla e/ou enter para seguir para o andar de baixo.");
+                leitor.nextLine();
+                System.out.println("\n2.Verificar o andar de baixo.\n\n"+
+                                    "Desci as escadas e verifiquei a sala, a cozinha, o armário embaixo da escada, e não achei nada de incomum, \n"+
+                                    "será que estaria no quarto trancado?\n" +
+                                    "De repente ouvi um choro de um bebê, e senti algo escorrendo pelas minhas pernas...\n" +
+                                    "SANGUE!!!\n" +
+                                    "Eu estava sangrando entre as minhas pernas enquanto ouvia o choro do bebê, o que poderia ser isso. \n"+
+                                    "Será que...? Não, não pode ser.\n" +
+                                    "Me lembrei de muito tempo atrás. Eu estava gravida de 5 meses, era muito feliz e já amava aquela criança, \n"+
+                                    "meu maior desejo sempre foi segura-lo. Um dia meu marido chegou em casa bêbado e me espancou, comecei a \n"+
+                                    "sangrar e abortei meu bebê por conta disto.\n" +
+                                    "O barulho parecia vir do cômodo trancado.");
+                do{
+                System.out.println("Escolha entre:\n"+
+                                    "1.Tentar abrir a porta do cômodo.\n"+
+                                    "2.Subir as escadas e ir ao banheiro.");
+                escolha7 = leitor.nextLine();
+                
+                if(escolha7.equals("1") || escolha7.equals("2")){
+                    if(escolha7.equals("1")){
+                        String escolha8;
+                        System.out.println("\n1.Tentar abri a porta do cômodo.\n\n"+
+                                            "Tentei abrir a porta do cômodo e para minha surpresa a porta se abriu. Lá tinha um quarto de bebê, \n"+
+                                            "cheio de brinquedinhos, um papel de parede com animais e um berço de madeira rústica que se encontrava \n"+
+                                            "no canto do quarto.\n"+
+                                            "Ao chegar no berço, pude ver um feto todo ensanguentado que ainda se mexia e que não parecia mais chorar,\n"+
+                                            "mas sim que se engasgava em seu próprio sangue e emitia um som muito estranho. Ao olhar aquela cena comecei \n"+
+                                            "a chorar desesperadamente, era algo horrível.\n" +
+                                            "Senti uma tontura, e o bebê parecia querer o meu colo.");
+                        do{
+                            System.out.println("Escolha entre:\n"+
+                                                "1.Segurar o bebê.\n"+
+                                                "2.Não segurar o bebê e fugir.");
+                            escolha8 = leitor.nextLine();
+                            
+                            if(escolha8.equals("1") || escolha8.equals("2")){//FRAGMENTO 2
+                                if(escolha8.equals("1")){
+                                    System.out.println("\n1.Segurar o bebê.\n\n"+
+                                                        "Resolvi segurar o bebê no colo mesmo em todo aquele estado. De repente o bebê sumiu em meus braços, deixando\n"+
+                                                        "somente uma pedra brilhante azul clara. \n" +
+                                                        "Depois disto apaguei.\n\n" +
+                                                        "                                       Joia da perda coletada.\n\n");
+                                    fragmento2 = 1;
+                                }
+                                else{
+                                    System.out.println("\n2.Não segurar o bebê e fugir.\n\n"+
+                                                        "A porta ainda estava aberta, então resolvi correr daquele lugar, não aguentava ficar ali. Corri com todas \n"+
+                                                        "as minhas forças até a porta, e apaguei. ");
+                                    fragmento2 = 0;
+                                }
+                            }
+                            else{
+                                System.out.println("Comando inválido, tente novamente.");
+                            }
+                            
+                        }while(!escolha8.equals("1") && !escolha8.equals("2"));
+                    }
+                    else{
+                        String escolha8;
+                        System.out.println("\n2.Subir as escadas e ir ao banheiro.\n\n"+
+                                            "Subi as escadas e fui ao banheiro. Apesar dos rastros de sangue eu não sentia nada, tentei me limpar,\n"+
+                                            "mas o sangue não parava. De repente ouvi a porta do cômodo debaixo se abrir, parei o que estava fazendo\n"+
+                                            "e desci as escadas, adentrando no cômodo que sempre esteve trancado. \n" +
+                                            "Para minha surpresa vi um quarto de bebê e no canto se encontrava um berço.\n"+
+                                            "Ao chegar no berço, pude ver um feto todo ensanguentado que ainda se mexia e que não parecia mais chorar,\n"+
+                                            "mas sim que se engasgava em seu próprio sangue e emitia um som muito estranho. Ao olhar aquela cena comecei \n"+
+                                            "a chorar desesperadamente, era algo horrível.\n" +
+                                            "Senti uma tontura, e o bebê parecia querer o meu colo.");
+                        
+                        do{
+                            System.out.println("Escolha entre:\n"+
+                                                "1.Segurar o bebê.\n"+
+                                                "2.Não segurar o bebê e fugir.");
+                            escolha8 = leitor.nextLine();
+                            
+                            if(escolha8.equals("1") || escolha8.equals("2")){//FRAGMENTO 2
+                                if(escolha8.equals("1")){
+                                    System.out.println("\n1.Segurar o bebê.\n\n"+
+                                                        "Resolvi segurar o bebê no colo mesmo em todo aquele estado. De repente o bebê sumiu em meus braços, deixando\n"+
+                                                        "somente uma pedra brilhante azul clara. \n" +
+                                                        "Depois disto apaguei.\n\n" +
+                                                        "                                       Joia da perda coletada.\n\n");
+                                    fragmento2 = 1;
+                                }
+                                else{
+                                    System.out.println("\n2.Não segurar o bebê e fugir.\n\n"+
+                                                        "A porta ainda estava aberta, então resolvi correr daquele lugar, não aguentava ficar ali. Corri com todas \n"+
+                                                        "as minhas forças até a porta, e apaguei. ");
+                                    fragmento2 = 0;
+                                }
+                            }
+                            else{
+                                System.out.println("Comando inválido, tente novamente.");
+                            }
+                            
+                        }while(!escolha8.equals("1") && !escolha8.equals("2"));
+                    }
+                }
+                else{
+                    System.out.println("Comando inválido, tente novamente.");
+                }
+                }while(!escolha7.equals("1") && ! escolha7.equals("2"));
+                
+            }
+            else{
+                String escolha7;
+                
+                System.out.println("\n2.Verificar o andar de baixo.\n\n"+
+                                    "Desci as escadas e verifiquei a sala, a cozinha, o armário embaixo da escada, e não achei nada de incomum, \n"+
+                                    "será que estaria no quarto trancado?\n" +
+                                    "De repente ouvi um choro de um bebê, e senti algo escorrendo pelas minhas pernas...\n" +
+                                    "SANGUE!!!\n" +
+                                    "Eu estava sangrando entre as minhas pernas enquanto ouvia o choro do bebê, o que poderia ser isso. \n"+
+                                    "Será que...? Não, não pode ser.\n" +
+                                    "Me lembrei de muito tempo atrás. Eu estava gravida de 5 meses, era muito feliz e já amava aquela criança, \n"+
+                                    "meu maior desejo sempre foi segura-lo. Um dia meu marido chegou em casa bêbado e me espancou, comecei a \n"+
+                                    "sangrar e abortei meu bebê por conta disto.\n" +
+                                    "O barulho parecia vir do cômodo trancado.");
+                do{
+                System.out.println("Escolha entre:\n"+
+                                    "1.Tentar abrir a porta do cômodo.\n"+
+                                    "2.Subir as escadas e ir ao banheiro.");
+                escolha7 = leitor.nextLine();
+                
+                if(escolha7.equals("1") || escolha7.equals("2")){
+                    if(escolha7.equals("1")){
+                        String escolha8;
+                        System.out.println("\n1.Tentar abri a porta do cômodo.\n\n"+
+                                            "Tentei abrir a porta do cômodo e para minha surpresa a porta se abriu. Lá tinha um quarto de bebê, \n"+
+                                            "cheio de brinquedinhos, um papel de parede com animais e um berço de madeira rústica que se encontrava \n"+
+                                            "no canto do quarto.\n"+
+                                            "Ao chegar no berço, pude ver um feto todo ensanguentado que ainda se mexia e que não parecia mais chorar,\n"+
+                                            "mas sim que se engasgava em seu próprio sangue e emitia um som muito estranho. Ao olhar aquela cena comecei \n"+
+                                            "a chorar desesperadamente, era algo horrível.\n" +
+                                            "Senti uma tontura, e o bebê parecia querer o meu colo.");
+                        do{
+                            System.out.println("Escolha entre:\n"+
+                                                "1.Segurar o bebê.\n"+
+                                                "2.Não segurar o bebê e fugir.");
+                            escolha8 = leitor.nextLine();
+                            
+                            if(escolha8.equals("1") || escolha8.equals("2")){//FRAGMENTO 2
+                                if(escolha8.equals("1")){
+                                    System.out.println("\n1.Segurar o bebê.\n\n"+
+                                                        "Resolvi segurar o bebê no colo mesmo em todo aquele estado. De repente o bebê sumiu em meus braços, deixando\n"+
+                                                        "somente uma pedra brilhante azul clara. \n" +
+                                                        "Depois disto apaguei.\n\n" +
+                                                        "                                       Joia da perda coletada.\n\n");
+                                    fragmento2 = 1;
+                                }
+                                else{
+                                    System.out.println("\n2.Não segurar o bebê e fugir.\n\n"+
+                                                        "A porta ainda estava aberta, então resolvi correr daquele lugar, não aguentava ficar ali. Corri com todas \n"+
+                                                        "as minhas forças até a porta, e apaguei. ");
+                                    fragmento2 = 0;
+                                }
+                            }
+                            else{
+                                System.out.println("Comando inválido, tente novamente.");
+                            }
+                            
+                        }while(!escolha8.equals("1") && !escolha8.equals("2"));
+                    }
+                    else{
+                        String escolha8;
+                        System.out.println("\n2.Subir as escadas e ir ao banheiro.\n\n"+
+                                            "Subi as escadas e fui ao banheiro. Apesar dos rastros de sangue eu não sentia nada, tentei me limpar,\n"+
+                                            "mas o sangue não parava. De repente ouvi a porta do cômodo debaixo se abrir, parei o que estava fazendo\n"+
+                                            "e desci as escadas, adentrando no cômodo que sempre esteve trancado. \n" +
+                                            "Para minha surpresa vi um quarto de bebê e no canto se encontrava um berço.\n"+
+                                            "Ao chegar no berço, pude ver um feto todo ensanguentado que ainda se mexia e que não parecia mais chorar,\n"+
+                                            "mas sim que se engasgava em seu próprio sangue e emitia um som muito estranho. Ao olhar aquela cena comecei \n"+
+                                            "a chorar desesperadamente, era algo horrível.\n" +
+                                            "Senti uma tontura, e o bebê parecia querer o meu colo.");
+                        
+                        do{
+                            System.out.println("Escolha entre:\n"+
+                                                "1.Segurar o bebê.\n"+
+                                                "2.Não segurar o bebê e fugir.");
+                            escolha8 = leitor.nextLine();
+                            
+                            if(escolha8.equals("1") || escolha8.equals("2")){//FRAGMENTO 2
+                                if(escolha8.equals("1")){
+                                    System.out.println("\n1.Segurar o bebê.\n\n"+
+                                                        "Resolvi segurar o bebê no colo mesmo em todo aquele estado. De repente o bebê sumiu em meus braços, deixando\n"+
+                                                        "somente uma pedra brilhante azul clara. \n" +
+                                                        "Depois disto apaguei.\n\n" +
+                                                        "                                       Joia da perda coletada.\n\n");
+                                    fragmento2 = 1;
+                                }
+                                else{
+                                    System.out.println("\n2.Não segurar o bebê e fugir.\n\n"+
+                                                        "A porta ainda estava aberta, então resolvi correr daquele lugar, não aguentava ficar ali. Corri com todas \n"+
+                                                        "as minhas forças até a porta, e apaguei. ");
+                                    fragmento2 = 0;
+                                }
+                            }
+                            else{
+                                System.out.println("Comando inválido, tente novamente.");
+                            }
+                            
+                        }while(!escolha8.equals("1") && !escolha8.equals("2"));
+                    }
+                }
+                else{
+                    System.out.println("Comando inválido, tente novamente.");
+                }
+                }while(!escolha7.equals("1") && ! escolha7.equals("2"));
+
+            }
+            
+        }
+        else{
+            System.out.println("Comando inválido, tente novamente.");
+        }
+        
+        }while(!escolha6.equals("1") && !escolha6.equals("2"));
+            
+        return fragmento2;
+    }
+    
+    
+    
+    public static int FlorenceParte4(){
+        Scanner leitor = new Scanner(System.in);
+        int fragmento3 = 0;
+        
+        System.out.println("25 de outubro, 07:30.\n" +
+                            "Poucos dias se passaram após o ocorrido, ainda não entendia muito bem o que aquilo tudo significava\n"+
+                            "e não sabia o motivo daquela pequena pedra ter aparecido, porém a carrego comigo por aí por precaução. \n"+
+                            "Acordei cedo e me dirigi ao hospital, como normalmente estava fazendo, chegando lá tive um dia comum, nada \n"+
+                            "demais aconteceu.\n"+
+                            "À tarde, tive que pegar o elevador para subir até o quarto andar, onde precisava dar o último sedativo \n"+
+                            "para um dos pacientes. Chegando lá, a porta do elevador se abriu e me deparei com um corredor completamente \n"+
+                            "vazio e com as luzes piscando diversas vezes, o que era estranho, pois visitava aquele andar praticamente \n"+
+                            "todos os dias e sempre estava normal.");
+        String escolha9;
+        do{
+            System.out.println("Escolha entre:\n"+
+                                "1.Voltar para o elevador.\n"+
+                                "2.Ir diretamente para o quarto do paciente.");
+            escolha9 = leitor.nextLine();
+            
+            if(escolha9.equals("1") || escolha9.equals("2")){
+                if(escolha9.equals("1")){
+                    System.out.println("\n1.Voltar para o elevador.\n\n"+
+                                        "Voltei ao elevador e tentei descer, para a minha surpresa o elevador não estava funcionando de forma alguma, desisti e \n"+
+                                        "continuei para o corredor. \n"+
+                                        "Digite qualquer tecla e/ou enter para seguir para a escolha 2.");
+                    leitor.nextLine();
+                    String escolha10;
+                    System.out.println("\n2.Ir diretamente para o quarto do paciente.\n\n"+
+                                       "No corredor fui diretamente para o quarto do paciente que precisava do atendimento. Ao chegar me deparei com \n"+
+                                       "um quarto quase completamente vazio, se não fosse por um único leito.\n" +
+                                       "De repente ouvi uma voz gritando meu nome.\n" +
+                                       "                                    “FLORENCEEEEE. ”\n" +
+                                       "Parecia a voz do meu marido, mas não como costumava ser. Era a voz que ele me recebia bêbado, toda vez que eu\n"+
+                                       "seria espancada.");
+                    do{
+                        System.out.println("Escolha entre:\n\n"+
+                                            "1.Correr até o fim do corredor.\n"+
+                                            "2.Esconder-se embaixo da maca.");
+                        escolha10 = leitor.nextLine();
+                        
+                        if(escolha10.equals("1") || escolha10.equals("2")){
+                            if(escolha10.equals("1")){
+                                String escolha11;
+                                System.out.println("\n1.Correr até o fim do corredor.\n\n"+
+                                                    "Corri para o fim do corredor e me deparei com uma porta escura, não parecia algo do hospital, mas entrei \n"+
+                                                    "mesmo assim. No mesmo momento em que entrei a porta atrás de mim se fechou com força, me deparando com uma sala \n"+
+                                                    "sem luz e sem ninguém. Procurei por um interruptor tateando a parede, e achei um botão. \n"+
+                                                    "Encontrava-me em um cômodo completamente sujo, com sangue por todas as paredes e o corpo de um homem em \n"+
+                                                    "uma cadeira ao centro. O corpo estava completamente pútrido e fétido e na boca do homem estava uma chave.");
+                                do{
+                                    System.out.println("Escolha entre:\n"+
+                                                        "1.Pegar a chave.\n"+
+                                                        "2.Tentar arrombar a porta.");
+                                    escolha11 = leitor.nextLine();
+                                    
+                                    if(escolha11.equals("1") || escolha11.equals("2")){
+                                        if(escolha11.equals("1")){
+                                            int escolha12;
+                                            System.out.println("\n1.Pegar a chave.\n\n"+
+                                                            "Tentei pegar a chave, e de repente o homem se levantou e tentou me atacar. Me esquivei, ele caiu no chão\n"+
+                                                            "e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                            "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                            "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                            "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                            "                       “Sua casa com sua gestação, números e números, quais serão eles?”");
+                                            
+                                            for(int i=0; i<3; i++){
+                                                escolha12 = leitor.nextInt();
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.");
+                                                    fragmento3=1;
+                                                    if(fragmento3==1){
+                                                    break;
+                                                    }
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                    fragmento3=0;
+                                                    
+                                                }
+                                            }
+                                            if(fragmento3==0){
+                                                    System.out.println("Tentei duas vezes abrir e não consegui, após a terceira a caixa começou a balançar e disparou uma luz forte que\n"+
+                                                                        "quase me cegou, em seguida desapareceu. Pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a \n"+
+                                                                        "mesma saída pela qual entrei, me levantei e corri para fora de lá.");
+                                            }
+                                        }
+                                        else{
+                                            int escolha12;
+                                            System.out.println("\n2.Tentar arrombar a porta.\n\n"+
+                                                                "Tentei arrombar a porta e de repente o homem que estava sentado se levantou e tentou me atacar. Me esquivei, \n"+
+                                                                "ele caiu no chão e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                                "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                                "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                                "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                                "                       “Sua casa e sua gestação, número e números, quais serão eles?”");
+                                            
+                                            for(int i=0; i<3; i++){
+                                                escolha12 = leitor.nextInt();
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.");
+                                                    fragmento3=1;
+                                                    if(fragmento3==1){
+                                                    break;
+                                                    }
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                    fragmento3=0;
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        System.out.println("Comando inválido, tente novamente.");
+                                    }
+                                }while(!escolha11.equals("1") && !escolha11.equals("2"));
+                            }
+                            else{
+                                String escolha11;
+                                System.out.println("\n2.Esconder-se embaixo da maca.\n\n"+
+                                                    "Me escondi embaixo da maca do paciente que deveria estar ali, esperei por um tempo e não ouvi a voz\n"+
+                                                    "novamente. Resolvi me levantar e sair dali, mas a voz retornou assim que me levantei...\n" +
+                                                    "                                      “FLORENCEEEE. “\n" +
+                                                    " ...e parecia mais próxima, então de súbito resolvi correr para o final do corredor, onde me deparei com\n"+
+                                                    "uma porta escura, não parecia algo do hospital, mas entrei mesmo assim, me encontrando em uma sala sem luz \n"+
+                                                    "e sem ninguém.Procurei por um interruptor tateando a parede, e achei um botão. \n"+
+                                                    "Encontrava-me em um cômodo completamente sujo, com sangue por todas as paredes e o corpo de um homem em \n"+
+                                                    "uma cadeira ao centro. O corpo estava completamente pútrido e fétido e na boca do homem estava uma chave.");
+                                do{
+                                    System.out.println("Escolha entre:\n"+
+                                                        "1.Pegar a chave.\n"+
+                                                        "2.Tentar arrombar a porta.");
+                                    escolha11 = leitor.nextLine();
+                                    
+                                    if(escolha11.equals("1") || escolha11.equals("2")){
+                                        if(escolha11.equals("1")){
+                                            int escolha12;
+                                            System.out.println("\n1.Pegar a chave.\n\n"+
+                                                            "Tentei pegar a chave, e de repente o homem se levantou e tentou me atacar. Me esquivei, ele caiu no chão\n"+
+                                                            "e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                            "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                            "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                            "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                            "                       “Sua casa e sua gestação, número e números, quais serão eles?”");
+                                            escolha12 = leitor.nextInt();
+                                            for(int i=0; i>4; i++){
+                                                
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.\n"+
+                                                                        "                                         Joia do medo coletada.");
+                                                    //return 1;
+                                                
+                                                
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                    
+                                                }
+                                            }
+                                        }
+                                        else{
+                                            int escolha12;
+                                            System.out.println("\n2.Tentar arrombar a porta.\n\n"+
+                                                                "Tentei arrombar a porta e de repente o homem que estava sentado se levantou e tentou me atacar. Me esquivei, \n"+
+                                                                "ele caiu no chão e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                                "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                                "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                                "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                                "                       “Sua casa e sua gestação, número e números, quais serão eles?”");
+                                            
+                                            for(int i=0; i<4; i++){
+                                                escolha12 = leitor.nextInt();
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.");
+                                                
+                                                
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        System.out.println("Comando inválido, tente novamente.");
+                                    }
+                                }while(!escolha11.equals("1") && !escolha11.equals("2"));
+                            }
+                        }
+                        else{
+                            System.out.println("Comando inválido, tente novamente.");
+                        }
+                        
+                    }while(!escolha10.equals("1") && !escolha10.equals("2"));
+                                    
+                }
+                else{
+                    String escolha10;
+                    System.out.println("\n2.Ir diretamente para o quarto do paciente.\n\n"+
+                                       "No corredor fui diretamente para o quarto do paciente que precisava do atendimento. Ao chegar me deparei com \n"+
+                                       "um quarto quase completamente vazio, se não fosse por um único leito.\n" +
+                                       "De repente ouvi uma voz gritando meu nome.\n" +
+                                       "                                    “FLORENCEEEEE. ”\n" +
+                                       "Parecia a voz do meu marido, mas não como costumava ser. Era a voz que ele me recebia bêbado, toda vez que eu\n"+
+                                       "seria espancada.");
+                    do{
+                        System.out.println("Escolha entre:\n\n"+
+                                            "1.Correr até o fim do corredor.\n"+
+                                            "2.Esconder-se embaixo da maca.");
+                        escolha10 = leitor.nextLine();
+                        
+                        if(escolha10.equals("1") || escolha10.equals("2")){
+                            if(escolha10.equals("1")){
+                                String escolha11;
+                                System.out.println("\n1.Correr até o fim do corredor.\n\n"+
+                                                    "Corri para o fim do corredor e me deparei com uma porta escura, não parecia algo do hospital, mas entrei \n"+
+                                                    "mesmo assim. No mesmo momento em que entrei a porta atrás de mim se fechou com força, me deparando com uma sala \n"+
+                                                    "sem luz e sem ninguém. Procurei por um interruptor tateando a parede, e achei um botão. \n"+
+                                                    "Encontrava-me em um cômodo completamente sujo, com sangue por todas as paredes e o corpo de um homem em \n"+
+                                                    "uma cadeira ao centro. O corpo estava completamente pútrido e fétido e na boca do homem estava uma chave.");
+                                do{
+                                    System.out.println("Escolha entre:\n"+
+                                                        "1.Pegar a chave.\n"+
+                                                        "2.Tentar arrombar a porta.");
+                                    escolha11 = leitor.nextLine();
+                                    
+                                    if(escolha11.equals("1") || escolha11.equals("2")){
+                                        if(escolha11.equals("1")){
+                                            int escolha12;
+                                            System.out.println("\n1.Pegar a chave.\n\n"+
+                                                            "Tentei pegar a chave, e de repente o homem se levantou e tentou me atacar. Me esquivei, ele caiu no chão\n"+
+                                                            "e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                            "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                            "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                            "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                            "                       “Sua casa com sua gestação, números e números, quais serão eles?”");
+                                            
+                                            for(int i=0; i<3; i++){
+                                                escolha12 = leitor.nextInt();
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.\n"+
+                                                                        "                               Joia do medo coletada.\n\n");
+                                                    fragmento3=1;
+                                                    if(fragmento3==1){
+                                                    break;
+                                                    }
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                    fragmento3=0;
+                                                    
+                                                }
+                                            }
+                                            if(fragmento3==0){
+                                                    System.out.println("Tentei duas vezes abrir e não consegui, após a terceira a caixa começou a balançar e disparou uma luz forte que\n"+
+                                                                        "quase me cegou, em seguida desapareceu. Pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a \n"+
+                                                                        "mesma saída pela qual entrei, me levantei e corri para fora de lá.");
+                                            }
+                                        }
+                                        else{
+                                            int escolha12;
+                                            System.out.println("\n2.Tentar arrombar a porta.\n\n"+
+                                                                "Tentei arrombar a porta e de repente o homem que estava sentado se levantou e tentou me atacar. Me esquivei, \n"+
+                                                                "ele caiu no chão e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                                "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                                "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                                "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                                "                       “Sua casa e sua gestação, número e números, quais serão eles?”");
+                                            
+                                            for(int i=0; i<3; i++){
+                                                escolha12 = leitor.nextInt();
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.\n"+
+                                                                        "                                       Joia do medo coletada.\n\n");
+                                                    fragmento3=1;
+                                                    if(fragmento3==1){
+                                                    break;
+                                                    }
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                    fragmento3=0;
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        System.out.println("Comando inválido, tente novamente.");
+                                    }
+                                }while(!escolha11.equals("1") && !escolha11.equals("2"));
+                            }
+                            else{
+                                String escolha11;
+                                System.out.println("\n2.Esconder-se embaixo da maca.\n\n"+
+                                                    "Me escondi embaixo da maca do paciente que deveria estar ali, esperei por um tempo e não ouvi a voz\n"+
+                                                    "novamente. Resolvi me levantar e sair dali, mas a voz retornou assim que me levantei...\n" +
+                                                    "                                      “FLORENCEEEE. “\n" +
+                                                    " ...e parecia mais próxima, então de súbito resolvi correr para o final do corredor, onde me deparei com\n"+
+                                                    "uma porta escura, não parecia algo do hospital, mas entrei mesmo assim, me encontrando em uma sala sem luz \n"+
+                                                    "e sem ninguém.Procurei por um interruptor tateando a parede, e achei um botão. \n"+
+                                                    "Encontrava-me em um cômodo completamente sujo, com sangue por todas as paredes e o corpo de um homem em \n"+
+                                                    "uma cadeira ao centro. O corpo estava completamente pútrido e fétido e na boca do homem estava uma chave.");
+                                do{
+                                    System.out.println("Escolha entre:\n"+
+                                                        "1.Pegar a chave.\n"+
+                                                        "2.Tentar arrombar a porta.");
+                                    escolha11 = leitor.nextLine();
+                                    
+                                    if(escolha11.equals("1") || escolha11.equals("2")){
+                                        if(escolha11.equals("1")){
+                                            int escolha12;
+                                            System.out.println("\n1.Pegar a chave.\n\n"+
+                                                            "Tentei pegar a chave, e de repente o homem se levantou e tentou me atacar. Me esquivei, ele caiu no chão\n"+
+                                                            "e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                            "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                            "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                            "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                            "                       “Sua casa e sua gestação, número e números, quais serão eles?”");
+                                            escolha12 = leitor.nextInt();
+                                            for(int i=0; i>4; i++){
+                                                
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.\n"+
+                                                                        "                                         Joia do medo coletada.\n\n");
+                                                    
+                                                    fragmento3 = 1;
+                                                    if(fragmento3==1){
+                                                    break;
+                                                    }
+                                                
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                    fragmento3 = 0;
+                                                }
+                                            }
+                                        }
+                                        else{
+                                            int escolha12;
+                                            System.out.println("\n2.Tentar arrombar a porta.\n\n"+
+                                                                "Tentei arrombar a porta e de repente o homem que estava sentado se levantou e tentou me atacar. Me esquivei, \n"+
+                                                                "ele caiu no chão e seu corpo se desfez, sobrando apenas a chave na superfície.\n"+
+                                                                "Com a chave em mãos, não vi nenhuma porta, a antiga que estava ali sumira. Embaixo da cadeira onde o corpo\n"+ 
+                                                                "estava antes avistei um pequeno baú, então tentei abri-lo com a chave e consegui. Ao abrir o baú me deparei \n"+
+                                                                "com um outro baú, com uma senha e um papel com uma dica ao lado. \n" +
+                                                                "                       “Sua casa e sua gestação, número e números, quais serão eles?”");
+                                            
+                                            for(int i=0; i<4; i++){
+                                                escolha12 = leitor.nextInt();
+                                                if(escolha12==33+5){
+                                                    System.out.println("\nA tampa do baú se abriu e dentro havia uma pequena pedra brilhosa vermelha, então peguei-a e guardei no bolso. \n"+
+                                                                        "Depois de fechar a caixa novamente pude ouvir o barulho de uma porta se abrindo, olhei para frente e vi a mesma \n"+
+                                                                        "saída pela qual entrei, me levantei e corri para fora de lá.\n"+
+                                                                        "                               Joia do medo coletada.\n\n");
+                                                    fragmento3 = 1;
+                                                
+                                                }
+                                                else{
+                                                    System.out.println("Resposta errada, tente novamente.");
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        System.out.println("Comando inválido, tente novamente.");
+                                    }
+                                }while(!escolha11.equals("1") && !escolha11.equals("2"));
+                            }
+                        }
+                        else{
+                            System.out.println("Comando inválido, tente novamente.");
+                        }
+                        
+                    }while(!escolha10.equals("1") && !escolha10.equals("2"));
+                                    
+                }
+            }
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+            }
+            
+        }while(!escolha9.equals("1") && !escolha9.equals("2"));
+        return fragmento3;
+    }
+    
+    
+    public static void Final(int v1, int v2, int v3){
+        int [] resposta = new int [3];
+        System.out.println("Ava Fleury e Florence Gauthier\n\n" +
+                            "26 de outubro, 10:04.\n" +
+                            "Nós duas nos encontramos nos corredores. Debatendo sobre o assunto do possível assassinato, notamos que nós \n"+
+                            "estávamos tendo alucinações, por assim dizer. Decidimos voltar ao quarto onde o corpo da Anne Charles foi \n"+
+                            "encontrado. Abrimos a porta e nos deparamos com a sala escura, rodeada de velas e 3 pessoas vestidas com \n"+
+                            "túnicas pretas. Ao entrarmos no cômodo, a porta automaticamente fechou-se atrás de nós.");
+        
+        long sorteio = Math.round(1+Math.random()*10);
+        
+        if(sorteio<=3){
+            resposta[0] = Climax1(v1,v2,v3);
+            long sorteio2 = Math.round(1+Math.random()*10);
+            if(sorteio2<=5){
+                resposta[1] = Climax2(v1,v2,v3);
+                resposta[2] = Climax3(v1,v2,v3);
+            }
+            else{
+                resposta[2] = Climax3(v1,v2,v3);
+                resposta[1] = Climax2(v1,v2,v3);
+            }
+        }
+        else{
+            if(sorteio<=6){
+                resposta[1] = Climax2(v1,v2,v3);
+                long sorteio2 = Math.round(1+Math.random()*10);
+                if(sorteio2<=5){
+                    resposta[0] = Climax1(v1,v2,v3);
+                    resposta[2] = Climax3(v1,v2,v3);
+                }
+                else{
+                    resposta[2] = Climax3(v1,v2,v3);
+                    resposta[0] = Climax1(v1,v2,v3);
+                }
+            }
+            else{
+                resposta[2] = Climax3(v1,v2,v3);
+                long sorteio2 = Math.round(1+Math.random()*10);
+                if(sorteio2<=5){
+                    resposta[1] = Climax2(v1,v2,v3);
+                    resposta[0] = Climax1(v1,v2,v3);
+                }
+                else{
+                    resposta[0] = Climax1(v1,v2,v3);
+                    resposta[1] = Climax2(v1,v2,v3);
+                }
+            }
+        }
+        int soma = resposta[0]+resposta[1]+resposta[2];
+        Final2(soma);
+    }
+    
+    public static int Climax1(int v1,int v2, int v3){
+        Scanner leitor = new Scanner(System.in);
+        int [] fragmentos = new int [3];
+        fragmentos[0] = v1;
+        fragmentos[1] = v2;
+        fragmentos[2] = v3;
+        int resposta = 0;
+        
+        System.out.println("A entidade que se encontrava no meio começou a se transformar, até que virou uma cópia quase perfeita \n"+
+                            "da filha de Ava, toda ensanguentada. Essa forma começou a balbuciar: \n"+
+                            "“Porque você me deixou mamãe? Seu trabalho sempre foi mais importante do que eu e agora eu estou aqui, morta.”\n" +
+                            "Prescione enter para abrir o inventário e utilize o fragmento coletado que mais se identifique com \n"+
+                            "a batalha apresentada.");
+        leitor.nextLine();
+        System.out.println("INVENTÁRIO");
+        if(fragmentos[0]==1){
+            System.out.println("SLOTE 1: Joia do amor");
+        }
+        else{
+            System.out.println("SLOTE 1: vazio");
+        }
+        if(fragmentos[1]==1){
+            System.out.println("SLOTE 2: Joia da perda");
+        }
+        else{
+            System.out.println("SLOTE 2: vazio");
+        }
+        if(fragmentos[2]==1){
+            System.out.println("SLOTE 3: Joia do medo");
+        }
+        else{
+            System.out.println("SLOTE 3: vazio");
+        }
+        String escolha;
+        do{
+            escolha = leitor.nextLine();
+            
+            if(escolha.equals("1") || escolha.equals("2") || escolha.equals("3")){
+                if(escolha.equals("1") || escolha.equals("2")){
+                    if(escolha.equals("1")){
+                        if(fragmentos[0]==1){
+                            System.out.println("Ava estendeu a joia do amor e a pedra se iluminou, gerando um raio de luz forte em direção ao fantasma, \n"+
+                                            "que se desfez em cinzas.");
+                        fragmentos[0] = 0;
+                        resposta = 1;
+                        }
+                        else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                    }
+                    else{
+                        if(fragmentos[1]==1){
+                        System.out.println("Florence estendeu a joia da perda, porém nada aconteceu.");
+                        }
+                        else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                    }
+                }
+                else{
+                    if(fragmentos[2]==1){
+                        System.out.println("Florence estendeu a joia do medo, porém nada aconteceu.");
+                    }
+                    else{
+                        System.out.println("Você não possui este objeto.");
+                    }
+                }
+            }
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+            }
+            
+        }while(!escolha.equals("1") && !escolha.equals("2") && !escolha.equals("3"));
+        return resposta;
+        
+    }
+    
+    public static int Climax2(int v1, int v2, int v3){
+        Scanner leitor = new Scanner(System.in);
+        int [] fragmentos = new int [3];
+        fragmentos[0] = v1;
+        fragmentos[1] = v2;
+        fragmentos[2] = v3;
+        int resposta = 0;
+        
+        System.out.println("Um dos participantes desse grupo, que estava a esquerda, começou a mudar repentinamente de forma, até que se transformou no que seria\n"+
+                            "o bebê de Florence se estivesse viva hoje. A criança se dirigiu a Florence e começou a falar.\n"+
+                            "“Você só conseguiu me segurar por 5 meses, você é uma mulher fraca, mal conseguiu me gerar, então não merece sua vida.”\n" +
+                            "Prescione enter para abrir o inventário e utilize o fragmento coletado que mais se identifique com \n"+
+                            "a batalha apresentada.");
+        leitor.nextLine();
+        System.out.println("INVENTÁRIO");
+        if(fragmentos[0]==1){
+            System.out.println("SLOTE 1: Joia do amor");
+        }
+        else{
+            System.out.println("SLOTE 1: vazio");
+        }
+        if(fragmentos[1]==1){
+            System.out.println("SLOTE 2: Joia da perda");
+        }
+        else{
+            System.out.println("SLOTE 2: vazio");
+        }
+        if(fragmentos[2]==1){
+            System.out.println("SLOTE 3: Joia do medo");
+        }
+        else{
+            System.out.println("SLOTE 3: vazio");
+        }
+        String escolha;
+        do{
+            escolha = leitor.nextLine();
+            
+            if(escolha.equals("1") || escolha.equals("2") || escolha.equals("3")){
+                if(escolha.equals("1") || escolha.equals("2")){
+                    if(escolha.equals("1")){
+                        if(fragmentos[0]==1){
+                        System.out.println("Ava estendeu a joia do amor, porém nada aconteceu.");
+                        }
+                        else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                    }
+                    else{
+                        if(fragmentos[1]==1){
+                        System.out.println("Florence estendeu a joia da perda e a pedra se iluminou, gerando um raio de luz forte em direção ao fantasma, \n"+
+                                            "que se desfez em cinzas. ");
+                        fragmentos[1]=0;
+                        resposta = 1;
+                        }
+                        else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                    }
+                }
+                else{
+                    if(fragmentos[2]==1){
+                    System.out.println("Florence estendeu a joia do medo, porém nada aconteceu.");
+                    }
+                    else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                }
+            }
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+            }
+            
+        }while(!escolha.equals("1") && !escolha.equals("2") && !escolha.equals("3"));
+        return resposta;
+    }
+    
+    public static int Climax3(int v1,int v2,int v3){        
+        Scanner leitor = new Scanner(System.in);
+        int [] fragmentos = new int [3];
+        fragmentos[0] = v1;
+        fragmentos[1] = v2;
+        fragmentos[2] = v3;
+        int resposta = 0;
+        
+        System.out.println("O ser do lado direito começou a se modificar e virou um homem, idêntico ao marido de Florence, que se\n"+
+                            "chamava Hector. Ele se dirigiu a Florence e disse: \n" +
+                            "“Sua mulherzinha, quem acha que é,  saindo por aí com essas roupas curtas, VOCÊ É UMA VADIA QUALQUER!”\n" +
+                            "Prescione enter para abrir o inventário e utilize o fragmento coletado que mais se identifique com \n"+
+                            "a batalha apresentada.");
+        leitor.nextLine();
+        System.out.println("INVENTÁRIO");
+        if(fragmentos[0]==1){
+            System.out.println("SLOTE 1: Joia do amor");
+        }
+        else{
+            System.out.println("SLOTE 1: vazio");
+        }
+        if(fragmentos[1]==1){
+            System.out.println("SLOTE 2: Joia da perda");
+        }
+        else{
+            System.out.println("SLOTE 2: vazio");
+        }
+        if(fragmentos[2]==1){
+            System.out.println("SLOTE 3: Joia do medo");
+        }
+        else{
+            System.out.println("SLOTE 3: vazio");
+        }
+        String escolha;
+        do{
+            escolha = leitor.nextLine();
+            
+            if(escolha.equals("1") || escolha.equals("2") || escolha.equals("3")){
+                if(escolha.equals("1") || escolha.equals("2")){
+                    if(escolha.equals("1")){
+                        if(fragmentos[0]==1){
+                        System.out.println("Ava estendeu a joia do amor, porém nada aconteceu.");
+                        }
+                        else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                    }
+                    else{
+                        if(fragmentos[1]==1){
+                        System.out.println("Florence estendeu a joia da perda, porém nada aconteceu.");
+                        }
+                        else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                    }
+                }
+                else{
+                    if(fragmentos[2]==1){
+                    System.out.println("Florence estendeu a joia do medo e a pedra se iluminou, gerando um raio de luz forte em direção ao fantasma, \n"+
+                                        "que se desfez em cinzas.");
+                    fragmentos[2]=0;
+                    resposta = 1;
+                    }
+                    else{
+                            System.out.println("Você não possui este objeto.");
+                        }
+                }
+            }
+            else{
+                System.out.println("Comando inválido, tente novamente.");
+            }
+            
+        }while(!escolha.equals("1") && !escolha.equals("2") && !escolha.equals("3"));
+        return resposta;
+    }
+    
+    public static void Final2(int numero){
+        Scanner leitor = new Scanner(System.in);
+        int soma=numero;
+        if(soma>0){
+            String morte;
+            if(soma==1 || soma==2 ){
+                do{
+                System.out.println("Você não derrotou todas as entidades, agora terá de escolher quem morre:\n"+
+                                    "1.Ava Fleury.\n"+
+                                    "2.Florence Gauthier.");
+                morte = leitor.nextLine();
+                
+                if(morte.equals("1") || morte.equals("2")){
+                    if(morte.equals("1")){
+                        System.out.println("\n1.Ava Fleury.\n\n"+
+                                            "As pessoas de túnicas pretas parecem estar cada vez maiores e sem nenhum tipo de aviso, começam a se aproximar\n" + 
+                                            "da Ava, que estava aterrorizada. Florence começa a gritar porem não surte nenhum efeito. Uma das formas lentamente \n"+
+                                            "agarra o pescoço e o torce com facilidade. Ava morre instantaneamente.\n" +
+                                            "A outra entidade começa a falar em direção a Florence: “Depois da segunda guerra mundial, reconstruímos esse \n"+
+                                            "vilarejo do zero. Aqui tinha uma igreja. Nela aconteceram vários sacrifícios em prol da religião aqui pregada. \n"+
+                                            "Desde então essa seita tem como objetivo continuar lembrando daqueles que se foram para que outros pudessem viver. \n"+
+                                            "Estudamos minuciosamente as pessoas que podem aqui entrar. O assassinato de Anne Charles aconteceu para que pudéssemos\n"+
+                                            "ter certeza que as duas estão aptas a continuar com os nossos preceitos. Infelizmente Ava não conseguiu completar \n"+
+                                            "o desafio. Parabéns Florence, bem-vinda a seita.”");
+
+                    }
+                    else{
+                        System.out.println("\n2.Florence Gauthier.\n\n"+
+                                            "As pessoas de túnicas pretas parecem estar cada vez maiores e sem nenhum tipo de aviso, começam a se aproximar\n" + 
+                                            "da Florence, que estava aterrorizada. Ava começa a gritar porem não surte nenhum efeito. Uma das formas lentamente \n"+
+                                            "agarra o pescoço e o torce com facilidade. Florence morre instantaneamente.\n" +
+                                            "A outra entidade começa a falar em direção a Ava: “Depois da segunda guerra mundial, reconstruímos esse \n"+
+                                            "vilarejo do zero. Aqui tinha uma igreja. Nela aconteceram vários sacrifícios em prol da religião aqui pregada. \n"+
+                                            "Desde então essa seita tem como objetivo continuar lembrando daqueles que se foram para que outros pudessem viver. \n"+
+                                            "Estudamos minuciosamente as pessoas que podem aqui entrar. O assassinato de Anne Charles aconteceu para que pudéssemos\n"+
+                                            "ter certeza que as duas estão aptas a continuar com os nossos preceitos. Infelizmente Florence não conseguiu completar \n"+
+                                            "o desafio. Parabéns Ava, bem-vinda a seita.”");
+                    }
+                }
+                    
+                }while(!morte.equals("1") && !morte.equals("2"));
+            }
+            else{
+                System.out.println("De repente surge uma última forma em nossas frentes, agora de túnica vermelha. \n" +
+                                    "“Parabéns. Vocês provaram que suas escolhas são dignas e condizem com as suas vivencias. Depois da segunda \n"+
+                                    "guerra mundial, reconstruímos esse vilarejo do zero. Aqui tinha uma igreja. Nela aconteceram vários sacrifícios\n"+
+                                    "em prol da religião aqui pregada. Desde então essa seita tem como objetivo continuar lembrando daqueles que se \n"+
+                                    "foram para que outros pudessem viver. Estudamos minuciosamente as pessoas que podem aqui entrar. \n" +
+                                    "O assassinato de Anne Charles aconteceu para que pudéssemos ter certeza que as duas estão aptas a continuar com\n"+
+                                    "os nossos preceitos. \n" +
+                                    "Bem-vindas a seita. ");
+            }
+        }
+        else{
+            System.out.println("As pessoas de túnicas pretas parecem estar cada vez maiores e, sem nenhum tipo de aviso, começaram a se\n"+
+                                "aproximar das duas que estavam aterrorizadas. Duas delas lentamente agarram os pescoços das mulheres e \n"+
+                                "os torcem com facilidade, matando ambas.\n"+
+                                "                               VOCÊ FALHOU.O MAL CONTINUARÁ AQUI.");
+        }
+    }
+}
